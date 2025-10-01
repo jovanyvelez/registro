@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5efeb;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    min-height: 500px;
+    display: flex;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container-form {
+    width: 100%;
+    overflow: hidden;
+}
+
+.container-form form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in;
+    padding: 40px 20px;
+}
+
+.container-form h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.social-networks {
+    font-size: 18px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 23px;
+    margin-top: 23px;
+}
+
+.social-networks ion-icon {
+    border: 1px solid #C9CCCB;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-networks ion-icon:hover {
+    background-color: #373B4D;
+    color: white;
+    border-color: #373B4D;
+}
+
+.container-form span {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.container-input {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0 15px;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+}
+
+.container-input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+}
+
+.container-form a {
+    color: black;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.container-form a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    width: 170px;
+    height: 45px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #373B4D;
+    color: #EEEEEE;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2F4156;
+    transform: scale(1.05);
+}
+
+.toggle-text {
+    font-size: 14px;
+    margin-top: 20px;
+    display: none;
+}
+
+.toggle-text span {
+    color: #2F4156;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.toggle-text span:hover {
+    color: #373B4D;
+}
+
+/* Animacion */
+.sign-up {
+    transform: translateX(-100%);
+}
+
+.container.toggle .sign-in {
+    transform: translateX(100%);
+}
+
+.container.toggle .sign-up {
+    transform: translateX(0);
+}
+
+/* Welcome panel */
+.container-welcome {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #2F4156;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: 50% 0 0 50%;
+}
+
+.container-welcome .welcome {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 50px;
+    color: white;
+    transition: transform 0.5s ease-in-out;
+}
+
+.container.toggle .container-welcome {
+    transform: translateX(0);
+    border-radius: 0 50% 50% 0;
+}
+
+.welcome-sign-in {
+    transform: translateX(100%);
+}
+
+.container-welcome h3 {
+    font-size: 44px;
+}
+
+.container-welcome p {
+    font-size: 17px;
+    text-align: center;
+}
+
+.container-welcome .button {
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.container-welcome .button:hover {
+    background-color: white;
+    color: #2F4156;
+}
+
+.container.toggle .welcome-sign-in {
+    transform: translateX(0);
+}
+
+.container.toggle .welcome-sign-up {
+    transform: translateX(-100%);
+}
+
+/* Media Queries para pantallas pequeñas */
+
+/* Tablets y pantallas medianas */
+@media (width <= 768px) {
+    .container {
+        max-width: 500px;
+    }
+    
+    .container-welcome {
+        width: 60%;
+    }
+    
+    .container-welcome h3 {
+        font-size: 32px;
+    }
+    
+    .container-welcome p {
+        font-size: 15px;
+    }
+    
+    .container-welcome .welcome {
+        padding: 0 30px;
+    }
+}
+
+/* Móviles */
+@media (width <= 576px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    
+    .container {
+        flex-direction: column;
+        min-height: auto;
+        height: auto;
+    }
+    
+    .container-form {
+        height: auto;
+    }
+    
+    /* Ocultar el panel de bienvenida en móviles */
+    .container-welcome {
+        display: none;
+    }
+    
+    /* Mostrar los textos de toggle en móviles */
+    .toggle-text {
+        display: block;
+    }
+    
+    /* Ajustar animaciones para móviles */
+    .sign-up {
+        transform: translateX(-100%);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    
+    .sign-in {
+        position: relative;
+    }
+    
+    .container.toggle .sign-in {
+        transform: translateX(-100%);
+    }
+    
+    .container.toggle .sign-up {
+        transform: translateX(0);
+    }
+    
+    .container-form form {
+        padding: 30px 20px;
+        min-height: auto;
+        justify-content: flex-start;
+    }
+    
+    .container-form h1 {
+        font-size: 24px;
+    }
+    
+    .container-input {
+        max-width: 100%;
+    }
+    
+    .button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (width <= 400px) {
+    .container-form h1 {
+        font-size: 22px;
+    }
+    
+    .social-networks {
+        gap: 10px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    
+    .container-form span {
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    .container-input {
+        height: 38px;
+        padding: 0 12px;
+    }
+    
+    .button {
+        height: 42px;
+        font-size: 16px;
+    }
+}
