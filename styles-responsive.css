@@ -1,81 +1,46 @@
-* {
+
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+ }
 
-body {
-    width: 100%;
-    min-height: 100vh;
+body{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f5efeb;
-    padding: 20px;
 }
 
-.container {
-    width: 100%;
-    max-width: 800px;
-    min-height: 500px;
+.container{
     display: flex;
     position: relative;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    height: 500px;
 }
 
-.container-form {
+.container-form{
+    background-color: tomato;
     width: 100%;
     overflow: hidden;
 }
 
-.container-form form {
-    height: 100%;
+.container-form form{
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: transform 0.5s ease-in;
-    padding: 40px 20px;
 }
 
-.container-form h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
+.container-form span{
+    margin: 15px;
 }
 
-.social-networks {
-    font-size: 18px;
-    display: flex;
-    gap: 12px;
-    margin-bottom: 23px;
-    margin-top: 23px;
-}
-
-.social-networks ion-icon {
-    border: 1px solid #C9CCCB;
-    font-size: 20px;
-    border-radius: 20px;
-    padding: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.social-networks ion-icon:hover {
-    background-color: #373B4D;
-    color: white;
-    border-color: #373B4D;
-}
-
-.container-form span {
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.container-input {
-    width: 100%;
-    max-width: 300px;
+.container-input{
     height: 40px;
     margin-bottom: 10px;
     display: flex;
@@ -87,27 +52,22 @@ body {
     border-radius: 10px;
 }
 
-.container-input input {
+.container-input input{
     border: none;
+    background: none;
     outline: none;
     width: 100%;
-    height: 100%;
-    background-color: inherit;
+    font-size: 14px;
 }
 
-.container-form a {
+.container-form a{
     color: black;
-    font-size: 12px;
+    font-size: 0.8rem;
     margin-bottom: 20px;
     margin-top: 5px;
-    text-decoration: none;
 }
 
-.container-form a:hover {
-    text-decoration: underline;
-}
-
-.button {
+.button{
     width: 170px;
     height: 45px;
     font-size: 18px;
@@ -117,59 +77,34 @@ body {
     margin-top: 10px;
     background-color: #373B4D;
     color: #EEEEEE;
-    transition: all 0.3s ease;
 }
 
-.button:hover {
-    background-color: #2F4156;
-    transform: scale(1.05);
-}
-
-.toggle-text {
-    font-size: 14px;
-    margin-top: 20px;
-    display: none;
-}
-
-.toggle-text span {
-    color: #2F4156;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.toggle-text span:hover {
-    color: #373B4D;
-}
-
-/* Animacion */
-.sign-up {
+ /*Animacion*/
+.sign-up{
     transform: translateX(-100%);
 }
-
-.container.toggle .sign-in {
+.container.toggle .sign-in{
     transform: translateX(100%);
 }
-
-.container.toggle .sign-up {
+.container.toggle .sign-up{
     transform: translateX(0);
 }
 
-/* Welcome panel */
-.container-welcome {
-    position: absolute;
-    width: 50%;
-    height: 100%;
+/*welcome*/
+.container-welcome{
     background-color: #2F4156;
+    position: absolute;
+    border-radius: 50% 0 0 50%;
+    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+    transform: translate(100%);
     overflow: hidden;
-    border-radius: 50% 0 0 50%;
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out ;
 }
 
-.container-welcome .welcome {
+.container-welcome .welcome{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -180,40 +115,31 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-.container.toggle .container-welcome {
-    transform: translateX(0);
-    border-radius: 0 50% 50% 0;
-}
-
-.welcome-sign-in {
+.welcome-sign-in{
     transform: translateX(100%);
 }
 
-.container-welcome h3 {
+.container-welcome h3{
     font-size: 44px;
 }
-
-.container-welcome p {
+.container-welcome p{
     font-size: 17px;
     text-align: center;
 }
-
-.container-welcome .button {
+.container-welcome .button{
     border: 2px solid white;
-    background-color: transparent;
 }
 
-.container-welcome .button:hover {
-    background-color: white;
-    color: #2F4156;
-}
-
-.container.toggle .welcome-sign-in {
+.container.toggle .welcome-sign-in{
     transform: translateX(0);
 }
-
-.container.toggle .welcome-sign-up {
+.container.toggle .welcome-sign-up{
     transform: translateX(-100%);
+}
+
+.container.toggle .container-welcome{
+    transform: translateX(0);
+    border-radius: 0 50% 50% 0;
 }
 
 /* Media Queries para pantallas pequeñas */
@@ -221,12 +147,12 @@ body {
 /* Tablets y pantallas medianas */
 @media (width <= 768px) {
     .container {
-        max-width: 500px;
+        width: 500px;
+        margin-left: 0;
+        margin-right: 0
     }
     
-    .container-welcome {
-        width: 60%;
-    }
+
     
     .container-welcome h3 {
         font-size: 32px;
