@@ -16,7 +16,9 @@
     max-width: 800px;
     height: 500px;
     display: flex;
-    position: relative; /* Agregado: para que .container-welcome tome su altura */
+    position: relative; /*para que .container-welcome tome su altura */
+    border-radius: 15px; /* redondea los bordes del contenedor */
+    overflow: hidden;  /*Para que los bordes redondeados se apliquen a los hijos */
  }
 
  .container-form{
